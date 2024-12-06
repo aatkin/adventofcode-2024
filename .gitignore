@@ -1,0 +1,16 @@
+.calva/
+.clj-kondo/
+.cpcache/
+.lsp/
+.nrepl-port
+.vscode/
+.DS_Store
+.clerk/
+
+node_modules
+
+public/build
+
+datasets/**/input.txt
+datasets/**/part-1.md
+datasets/**/part-2.md
