@@ -38,9 +38,11 @@
 
 ;; ### Input
 
-(parse-mul puzzle-input)
+(some-> (util/not-blank puzzle-input)
+        parse-mul)
 
-(mul-sum puzzle-input)
+(some-> (util/not-blank puzzle-input)
+        mul-sum)
 
 {::clerk/visibility {:result :hide}}
 ;; ## Part 2
@@ -100,10 +102,12 @@
 
 ;; ### Input
 
-(enabled-muls puzzle-input)
+(some-> (util/not-blank puzzle-input)
+        enabled-muls)
 
-(->> (enabled-muls puzzle-input)
-     (map second)
-     (reduce + 0))
+(some->> (util/not-blank puzzle-input)
+         enabled-muls
+         (map second)
+         (reduce + 0))
 
 {::clerk/visibility {:result :hide}}

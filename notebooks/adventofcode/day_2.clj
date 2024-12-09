@@ -54,7 +54,10 @@
 ;; ### Input
 
 ^{::clerk/visibility {:result :show}}
-(count (safe-reports (parse-levels puzzle-input)))
+(some-> (util/not-blank puzzle-input)
+        parse-levels
+        safe-reports
+        count)
 
 ;; ## Part 2
 
@@ -97,4 +100,7 @@
 ;; ### Input
 
 ^{::clerk/visibility {:result :show}}
-(count (safe-reports-v2 (parse-levels puzzle-input)))
+(some-> (util/not-blank puzzle-input)
+        parse-levels
+        safe-reports-v2
+        count)

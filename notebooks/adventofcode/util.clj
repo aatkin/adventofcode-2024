@@ -11,3 +11,8 @@
   (-> s
       str/trim
       (str/replace #"\s{2,}" " ")))
+
+(defn not-blank [x]
+  (when (and (string? x)
+             (not (str/blank? x)))
+    x))

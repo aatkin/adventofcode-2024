@@ -43,10 +43,12 @@
 
 ;; ### Input
 
-(def all-pairs (parse-all-pairs puzzle-input))
+(def all-pairs (some-> (util/not-blank puzzle-input)
+                       parse-all-pairs))
 
-(distance (map first all-pairs)
-          (map second all-pairs))
+(when all-pairs
+  (distance (map first all-pairs)
+            (map second all-pairs)))
 
 {::clerk/visibility {:result :hide}}
 ;; ## Part 2
@@ -68,7 +70,8 @@
 
 ;; ### Input
 
-(similarity-score (map first all-pairs)
-                  (frequencies (map second all-pairs)))
+(when all-pairs
+  (similarity-score (map first all-pairs)
+                    (frequencies (map second all-pairs))))
 
 {::clerk/visibility {:result :hide}}
